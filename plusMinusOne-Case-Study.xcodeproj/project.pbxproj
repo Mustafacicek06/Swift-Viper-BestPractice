@@ -25,6 +25,14 @@
 		59A7BD6F2AF05C2C0035D182 /* Array+Unique.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A7BD6E2AF05C2C0035D182 /* Array+Unique.swift */; };
 		59A7BD722AF05D9D0035D182 /* ProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A7BD702AF05D9D0035D182 /* ProductVC.swift */; };
 		59A7BD732AF05D9D0035D182 /* ProductVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59A7BD712AF05D9D0035D182 /* ProductVC.xib */; };
+		59A7BD7A2AF0633D0035D182 /* KDCircularProgress in Frameworks */ = {isa = PBXBuildFile; productRef = 59A7BD792AF0633D0035D182 /* KDCircularProgress */; };
+		59A7BD802AF068950035D182 /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A7BD7F2AF068950035D182 /* UIView+Nib.swift */; };
+		59D462062AF3A4F300A3AA78 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D462042AF3A4F300A3AA78 /* TimerView.swift */; };
+		59D4620D2AF3C08500A3AA78 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D4620B2AF3C08500A3AA78 /* FavoriteButton.swift */; };
+		59D4620E2AF3C08500A3AA78 /* FavoriteButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59D4620C2AF3C08500A3AA78 /* FavoriteButton.xib */; };
+		59D462112AF3CA3B00A3AA78 /* product.json in Resources */ = {isa = PBXBuildFile; fileRef = 59D462102AF3CA3B00A3AA78 /* product.json */; };
+		59D462142AF3CAEB00A3AA78 /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D462132AF3CAEB00A3AA78 /* MockService.swift */; };
+		59D462162AF3D32300A3AA78 /* social.json in Resources */ = {isa = PBXBuildFile; fileRef = 59D462152AF3D32300A3AA78 /* social.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +75,13 @@
 		59A7BD6E2AF05C2C0035D182 /* Array+Unique.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Unique.swift"; sourceTree = "<group>"; };
 		59A7BD702AF05D9D0035D182 /* ProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVC.swift; sourceTree = "<group>"; };
 		59A7BD712AF05D9D0035D182 /* ProductVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductVC.xib; sourceTree = "<group>"; };
+		59A7BD7F2AF068950035D182 /* UIView+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
+		59D462042AF3A4F300A3AA78 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		59D4620B2AF3C08500A3AA78 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
+		59D4620C2AF3C08500A3AA78 /* FavoriteButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteButton.xib; sourceTree = "<group>"; };
+		59D462102AF3CA3B00A3AA78 /* product.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = product.json; sourceTree = "<group>"; };
+		59D462132AF3CAEB00A3AA78 /* MockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
+		59D462152AF3D32300A3AA78 /* social.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = social.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59A7BD7A2AF0633D0035D182 /* KDCircularProgress in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,8 +133,11 @@
 		59A7BD242AF059E20035D182 /* plusMinusOne-Case-Study */ = {
 			isa = PBXGroup;
 			children = (
-				59A7BD652AF05B0C0035D182 /* Resource */,
+				59D462102AF3CA3B00A3AA78 /* product.json */,
+				59D462152AF3D32300A3AA78 /* social.json */,
+				59D462122AF3CAE100A3AA78 /* Data */,
 				59A7BD642AF05AF00035D182 /* App */,
+				59A7BD652AF05B0C0035D182 /* Resource */,
 				59A7BD5F2AF05AA80035D182 /* Utils */,
 				59A7BD552AF05A520035D182 /* Module */,
 				59A7BD2E2AF059E40035D182 /* Assets.xcassets */,
@@ -159,8 +178,8 @@
 				59A7BD702AF05D9D0035D182 /* ProductVC.swift */,
 				59A7BD712AF05D9D0035D182 /* ProductVC.xib */,
 				59A7BD572AF05A730035D182 /* ProductInteractor.swift */,
-				59A7BD592AF05A830035D182 /* ProductEntity.swift */,
 				59A7BD5B2AF05A8D0035D182 /* ProductPresenter.swift */,
+				59A7BD592AF05A830035D182 /* ProductEntity.swift */,
 				59A7BD5D2AF05A980035D182 /* ProductRouter.swift */,
 			);
 			path = Product;
@@ -187,6 +206,7 @@
 		59A7BD652AF05B0C0035D182 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				59A7BD742AF062620035D182 /* Components */,
 				59A7BD672AF05B1E0035D182 /* Views */,
 				59A7BD662AF05B140035D182 /* Extensions */,
 			);
@@ -197,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				59A7BD6E2AF05C2C0035D182 /* Array+Unique.swift */,
+				59A7BD7F2AF068950035D182 /* UIView+Nib.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -226,6 +247,40 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
+		59A7BD742AF062620035D182 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				59D462082AF3B7EB00A3AA78 /* Buttons */,
+				59A7BD752AF062F20035D182 /* Timer */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		59A7BD752AF062F20035D182 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				59D462042AF3A4F300A3AA78 /* TimerView.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		59D462082AF3B7EB00A3AA78 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				59D4620B2AF3C08500A3AA78 /* FavoriteButton.swift */,
+				59D4620C2AF3C08500A3AA78 /* FavoriteButton.xib */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		59D462122AF3CAE100A3AA78 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				59D462132AF3CAEB00A3AA78 /* MockService.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -242,6 +297,9 @@
 			dependencies = (
 			);
 			name = "plusMinusOne-Case-Study";
+			packageProductDependencies = (
+				59A7BD792AF0633D0035D182 /* KDCircularProgress */,
+			);
 			productName = "plusMinusOne-Case-Study";
 			productReference = 59A7BD222AF059E20035D182 /* plusMinusOne-Case-Study.app */;
 			productType = "com.apple.product-type.application";
@@ -314,6 +372,9 @@
 				Base,
 			);
 			mainGroup = 59A7BD192AF059E20035D182;
+			packageReferences = (
+				59A7BD782AF0633D0035D182 /* XCRemoteSwiftPackageReference "KDCircularProgress" */,
+			);
 			productRefGroup = 59A7BD232AF059E20035D182 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -330,9 +391,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59D462162AF3D32300A3AA78 /* social.json in Resources */,
 				59A7BD322AF059E40035D182 /* LaunchScreen.storyboard in Resources */,
 				59A7BD2F2AF059E40035D182 /* Assets.xcassets in Resources */,
 				59A7BD732AF05D9D0035D182 /* ProductVC.xib in Resources */,
+				59D4620E2AF3C08500A3AA78 /* FavoriteButton.xib in Resources */,
+				59D462112AF3CA3B00A3AA78 /* product.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,15 +421,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59D462062AF3A4F300A3AA78 /* TimerView.swift in Sources */,
 				59A7BD722AF05D9D0035D182 /* ProductVC.swift in Sources */,
 				59A7BD632AF05AC00035D182 /* LoadingShowable.swift in Sources */,
 				59A7BD262AF059E20035D182 /* AppDelegate.swift in Sources */,
 				59A7BD6D2AF05B490035D182 /* LoadingView.swift in Sources */,
 				59A7BD5C2AF05A8D0035D182 /* ProductPresenter.swift in Sources */,
+				59D462142AF3CAEB00A3AA78 /* MockService.swift in Sources */,
 				59A7BD5A2AF05A830035D182 /* ProductEntity.swift in Sources */,
+				59A7BD802AF068950035D182 /* UIView+Nib.swift in Sources */,
 				59A7BD6F2AF05C2C0035D182 /* Array+Unique.swift in Sources */,
 				59A7BD6B2AF05B3A0035D182 /* ErrorView.swift in Sources */,
 				59A7BD582AF05A730035D182 /* ProductInteractor.swift in Sources */,
+				59D4620D2AF3C08500A3AA78 /* FavoriteButton.swift in Sources */,
 				59A7BD5E2AF05A980035D182 /* ProductRouter.swift in Sources */,
 				59A7BD282AF059E20035D182 /* SceneDelegate.swift in Sources */,
 				59A7BD612AF05AB60035D182 /* PopupShowable.swift in Sources */,
@@ -542,7 +610,6 @@
 				INFOPLIST_FILE = "plusMinusOne-Case-Study/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -570,7 +637,6 @@
 				INFOPLIST_FILE = "plusMinusOne-Case-Study/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -702,6 +768,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		59A7BD782AF0633D0035D182 /* XCRemoteSwiftPackageReference "KDCircularProgress" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kaandedeoglu/KDCircularProgress.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		59A7BD792AF0633D0035D182 /* KDCircularProgress */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59A7BD782AF0633D0035D182 /* XCRemoteSwiftPackageReference "KDCircularProgress" */;
+			productName = KDCircularProgress;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 59A7BD1A2AF059E20035D182 /* Project object */;
 }

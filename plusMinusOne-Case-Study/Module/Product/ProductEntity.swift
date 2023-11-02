@@ -6,3 +6,27 @@
 //
 
 import Foundation
+
+struct Product: Codable {
+    let id: Int
+    let name: String
+    let desc: String
+    let image: String
+    let price: Price
+}
+
+struct Price: Codable {
+    let value: Double
+    let currency: String
+}
+
+struct Social: Codable {
+    let likeCount: Int
+    let commentCounts: CommentCounts
+}
+
+struct CommentCounts: Codable {
+    let avarageRating: Int
+    let anonymousCommentsCount: Int
+    let memberCommentsCount: Int
+}
