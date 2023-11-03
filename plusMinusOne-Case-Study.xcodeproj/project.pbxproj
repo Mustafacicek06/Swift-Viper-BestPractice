@@ -27,6 +27,8 @@
 		59A7BD732AF05D9D0035D182 /* ProductVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59A7BD712AF05D9D0035D182 /* ProductVC.xib */; };
 		59A7BD7A2AF0633D0035D182 /* KDCircularProgress in Frameworks */ = {isa = PBXBuildFile; productRef = 59A7BD792AF0633D0035D182 /* KDCircularProgress */; };
 		59A7BD802AF068950035D182 /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A7BD7F2AF068950035D182 /* UIView+Nib.swift */; };
+		59A979C32AF4EB9300480BA6 /* MockServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A979C22AF4EB9300480BA6 /* MockServiceError.swift */; };
+		59A979C62AF4EDC700480BA6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 59A979C52AF4EDC700480BA6 /* Kingfisher */; };
 		59D462062AF3A4F300A3AA78 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D462042AF3A4F300A3AA78 /* TimerView.swift */; };
 		59D4620D2AF3C08500A3AA78 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D4620B2AF3C08500A3AA78 /* FavoriteButton.swift */; };
 		59D4620E2AF3C08500A3AA78 /* FavoriteButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59D4620C2AF3C08500A3AA78 /* FavoriteButton.xib */; };
@@ -76,6 +78,7 @@
 		59A7BD702AF05D9D0035D182 /* ProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVC.swift; sourceTree = "<group>"; };
 		59A7BD712AF05D9D0035D182 /* ProductVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductVC.xib; sourceTree = "<group>"; };
 		59A7BD7F2AF068950035D182 /* UIView+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
+		59A979C22AF4EB9300480BA6 /* MockServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockServiceError.swift; sourceTree = "<group>"; };
 		59D462042AF3A4F300A3AA78 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		59D4620B2AF3C08500A3AA78 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		59D4620C2AF3C08500A3AA78 /* FavoriteButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteButton.xib; sourceTree = "<group>"; };
@@ -89,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59A979C62AF4EDC700480BA6 /* Kingfisher in Frameworks */,
 				59A7BD7A2AF0633D0035D182 /* KDCircularProgress in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,8 +181,8 @@
 			children = (
 				59A7BD702AF05D9D0035D182 /* ProductVC.swift */,
 				59A7BD712AF05D9D0035D182 /* ProductVC.xib */,
-				59A7BD572AF05A730035D182 /* ProductInteractor.swift */,
 				59A7BD5B2AF05A8D0035D182 /* ProductPresenter.swift */,
+				59A7BD572AF05A730035D182 /* ProductInteractor.swift */,
 				59A7BD592AF05A830035D182 /* ProductEntity.swift */,
 				59A7BD5D2AF05A980035D182 /* ProductRouter.swift */,
 			);
@@ -277,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				59D462132AF3CAEB00A3AA78 /* MockService.swift */,
+				59A979C22AF4EB9300480BA6 /* MockServiceError.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 			name = "plusMinusOne-Case-Study";
 			packageProductDependencies = (
 				59A7BD792AF0633D0035D182 /* KDCircularProgress */,
+				59A979C52AF4EDC700480BA6 /* Kingfisher */,
 			);
 			productName = "plusMinusOne-Case-Study";
 			productReference = 59A7BD222AF059E20035D182 /* plusMinusOne-Case-Study.app */;
@@ -374,6 +380,7 @@
 			mainGroup = 59A7BD192AF059E20035D182;
 			packageReferences = (
 				59A7BD782AF0633D0035D182 /* XCRemoteSwiftPackageReference "KDCircularProgress" */,
+				59A979C42AF4EDC700480BA6 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 59A7BD232AF059E20035D182 /* Products */;
 			projectDirPath = "";
@@ -434,6 +441,7 @@
 				59A7BD6B2AF05B3A0035D182 /* ErrorView.swift in Sources */,
 				59A7BD582AF05A730035D182 /* ProductInteractor.swift in Sources */,
 				59D4620D2AF3C08500A3AA78 /* FavoriteButton.swift in Sources */,
+				59A979C32AF4EB9300480BA6 /* MockServiceError.swift in Sources */,
 				59A7BD5E2AF05A980035D182 /* ProductRouter.swift in Sources */,
 				59A7BD282AF059E20035D182 /* SceneDelegate.swift in Sources */,
 				59A7BD612AF05AB60035D182 /* PopupShowable.swift in Sources */,
@@ -778,6 +786,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		59A979C42AF4EDC700480BA6 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -785,6 +801,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 59A7BD782AF0633D0035D182 /* XCRemoteSwiftPackageReference "KDCircularProgress" */;
 			productName = KDCircularProgress;
+		};
+		59A979C52AF4EDC700480BA6 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59A979C42AF4EDC700480BA6 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

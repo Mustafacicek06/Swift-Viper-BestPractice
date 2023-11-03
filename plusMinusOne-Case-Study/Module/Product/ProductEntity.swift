@@ -26,7 +26,7 @@ struct Social: Codable {
 }
 
 struct CommentCounts: Codable {
-    let avarageRating: Int
+    let averageRating: Int
     let anonymousCommentsCount: Int
     let memberCommentsCount: Int
 }

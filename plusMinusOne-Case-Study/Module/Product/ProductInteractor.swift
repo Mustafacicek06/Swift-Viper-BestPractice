@@ -8,7 +8,8 @@
 import Foundation
 
 protocol ProductInteractorProtocol {
-    func fetchProduct()
+    func fetchProduct(dispatchGroup: DispatchGroup)
+    func fetchSocial(dispatchGroup: DispatchGroup)
 }
 
 protocol ProductInteractorOuput: AnyObject {
@@ -21,7 +22,19 @@ final class ProductInteractor {
 }
 
 extension ProductInteractor: ProductInteractorProtocol {
-    func fetchProduct() {
-        
+    func fetchProduct(dispatchGroup: DispatchGroup) {
+        dispatchGroup.enter()
+        MockService.shared.fetchProduct { [weak self] response in
+            self?.output?.handleProductResult(response)
+            dispatchGroup.leave()
+        }
+    }
+    
+    func fetchSocial(dispatchGroup: DispatchGroup) {
+        dispatchGroup.enter()
+        MockService.shared.fetchSocial { [weak self] response in
+            self?.output?.handleSocialResult(response)
+            dispatchGroup.leave()
+        }
     }
 }

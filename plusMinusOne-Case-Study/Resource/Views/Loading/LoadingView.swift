@@ -28,13 +28,17 @@ final class LoadingView {
     }
 
     func startLoading() {
-        UIApplication.shared.windows.first?.addSubview(blurView)
-        blurView.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicator.startAnimating()
+        DispatchQueue.main.async { [weak self] in
+            UIApplication.shared.windows.first?.addSubview(self?.blurView ?? UIView())
+            self?.blurView.translatesAutoresizingMaskIntoConstraints = false
+            self?.activityIndicator.startAnimating()
+        }
     }
 
     func hideLoading() {
-        blurView.removeFromSuperview()
-        activityIndicator.stopAnimating()
+        DispatchQueue.main.async { [weak self] in
+            self?.blurView.removeFromSuperview()
+            self?.activityIndicator.stopAnimating()
+        }
     }
 }

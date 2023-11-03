@@ -12,14 +12,18 @@ protocol ProductPresenterProtocol {
     func pullToRefresh()
     func viewWillDisplay()
     func viewWillLayoutSubviews()
+    func getProduct() -> Product?
+    func getSocial() -> Social?
 }
 
 final class ProductPresenter {
     private let view: ProductViewProtocol
     private let interactor: ProductInteractorProtocol
     
-    var product: Product?
-    var social: Social?
+    private var product: Product?
+    private var social: Social?
+    
+    private let dispatchGroup = DispatchGroup()
     
     init(view: ProductViewProtocol, interactor: ProductInteractorProtocol) {
         self.view = view
@@ -28,11 +32,26 @@ final class ProductPresenter {
     
     private func fetchData() {
         view.showLoadingView()
-        interactor.fetchProduct()
+        interactor.fetchProduct(dispatchGroup: dispatchGroup)
+        interactor.fetchSocial(dispatchGroup: dispatchGroup)
+    }
+    
+    private func dispatchGroupEndProcess() {
+        dispatchGroup.notify(queue: .main) { [weak self] in
+            self?.view.hideLoadingView()
+        }
     }
 }
 
 extension ProductPresenter: ProductPresenterProtocol {
+    func getProduct() -> Product? {
+        product
+    }
+    
+    func getSocial() -> Social? {
+        social
+    }
+    
     func viewWillLayoutSubviews() {
 
     }
@@ -52,15 +71,14 @@ extension ProductPresenter: ProductPresenterProtocol {
 
 extension ProductPresenter: ProductInteractorOuput {
     func handleSocialResult(_ completionHandler: Result<Social, Error>) {
-        view.hideLoadingView()
         switch completionHandler {
         case .success(let response):
             social = response
             view.reloadData()
             view.endRefreshing()
-        case .failure(_):
+        case .failure(let error):
             social = nil
-            view.showError()
+            view.showError(error.localizedDescription)
             break
         }
     }
@@ -72,9 +90,9 @@ extension ProductPresenter: ProductInteractorOuput {
             product = response
             view.reloadData()
             view.endRefreshing()
-        case .failure(_):
+        case .failure(let error):
             product = nil
-            view.showError()
+            view.showError(error.localizedDescription)
             break
         }
     }
