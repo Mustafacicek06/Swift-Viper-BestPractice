@@ -11,7 +11,6 @@ protocol ProductPresenterProtocol {
     func viewDidLoad()
     func pullToRefresh()
     func viewWillDisplay()
-    func viewWillLayoutSubviews()
     func getProduct() -> Product?
     func getSocial() -> Social?
 }
@@ -51,11 +50,7 @@ extension ProductPresenter: ProductPresenterProtocol {
     func getSocial() -> Social? {
         social
     }
-    
-    func viewWillLayoutSubviews() {
-
-    }
-    
+        
     func viewDidLoad() {
         fetchData()
     }
@@ -89,9 +84,8 @@ extension ProductPresenter: ProductInteractorOuput {
         switch completionHandler {
         case .success(let response):
             product = response
-        case .failure(let error):
+        case .failure(_):
             product = nil
-            view.showError(error.localizedDescription)
             break
         }
     }

@@ -20,13 +20,29 @@ struct Price: Codable {
     let currency: String
 }
 
-struct Social: Codable {
-    let likeCount: Int
-    let commentCounts: CommentCounts
+class Social: Codable {
+    var likeCount: Int
+    var commentCounts: CommentCounts
+    
+    func randomGenerate(closure: @escaping (Int,CommentCounts) -> Void ) {
+        likeCount = likeCount + Int.random(in: 0...10)
+        commentCounts.averageRating =  (commentCounts.averageRating + (Double.random(in: -0.3...0.3) * 100).rounded() / 100).roundedToDecimal(2)
+        commentCounts.anonymousCommentsCount = commentCounts.anonymousCommentsCount + Int.random(in: 0...10)
+        commentCounts.memberCommentsCount = commentCounts.memberCommentsCount + Int.random(in: 0...10)
+        print("\(likeCount) \(commentCounts.memberCommentsCount) \(commentCounts.averageRating)")
+        
+       
+        closure(likeCount, commentCounts)
+    }
 }
 
-struct CommentCounts: Codable {
-    let averageRating: Int
-    let anonymousCommentsCount: Int
-    let memberCommentsCount: Int
+class CommentCounts: Codable {
+    var averageRating: Double
+    var anonymousCommentsCount: Int
+    var memberCommentsCount: Int
+    var totalCommentCount: Int {
+        get {
+            return anonymousCommentsCount + memberCommentsCount
+        }
+    }
 }

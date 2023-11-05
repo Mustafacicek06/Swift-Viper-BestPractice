@@ -33,6 +33,7 @@
 		59A979C92AF517C800480BA6 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A979C82AF517C800480BA6 /* CommentView.swift */; };
 		59CAAE522AF65EC60026C70D /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CAAE512AF65EC60026C70D /* UIView+Layout.swift */; };
 		59CAAE552AF672440026C70D /* AppLayoutContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CAAE542AF672440026C70D /* AppLayoutContants.swift */; };
+		59CAAE572AF7D3C90026C70D /* Double+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CAAE562AF7D3C90026C70D /* Double+Formatter.swift */; };
 		59D462062AF3A4F300A3AA78 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D462042AF3A4F300A3AA78 /* TimerView.swift */; };
 		59D4620D2AF3C08500A3AA78 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D4620B2AF3C08500A3AA78 /* FavoriteButton.swift */; };
 		59D4620E2AF3C08500A3AA78 /* FavoriteButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59D4620C2AF3C08500A3AA78 /* FavoriteButton.xib */; };
@@ -89,6 +90,7 @@
 		59A979C82AF517C800480BA6 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		59CAAE512AF65EC60026C70D /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		59CAAE542AF672440026C70D /* AppLayoutContants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLayoutContants.swift; sourceTree = "<group>"; };
+		59CAAE562AF7D3C90026C70D /* Double+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Formatter.swift"; sourceTree = "<group>"; };
 		59D462042AF3A4F300A3AA78 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		59D4620B2AF3C08500A3AA78 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		59D4620C2AF3C08500A3AA78 /* FavoriteButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteButton.xib; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				59A7BD6E2AF05C2C0035D182 /* Array+Unique.swift */,
 				59A7BD7F2AF068950035D182 /* UIView+Nib.swift */,
 				59CAAE512AF65EC60026C70D /* UIView+Layout.swift */,
+				59CAAE562AF7D3C90026C70D /* Double+Formatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				59A7BD282AF059E20035D182 /* SceneDelegate.swift in Sources */,
 				59CAAE522AF65EC60026C70D /* UIView+Layout.swift in Sources */,
 				59A7BD612AF05AB60035D182 /* PopupShowable.swift in Sources */,
+				59CAAE572AF7D3C90026C70D /* Double+Formatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

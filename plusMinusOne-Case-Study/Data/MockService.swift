@@ -13,7 +13,7 @@ final class MockService {
            DispatchQueue.global().asyncAfter(deadline: .now() + Double.random(in: 1.0...2.5)) {
                let randomValue = Int.random(in: 0...10)
                
-               if randomValue < 3 {
+               if randomValue < 0 {
                    completion(.failure(MockServiceError.serviceUnavailable))
                } else {
                    if let product = self.jsonFileDecoder(JsonFileNames.product.rawValue, decoderModel: Product.self) {

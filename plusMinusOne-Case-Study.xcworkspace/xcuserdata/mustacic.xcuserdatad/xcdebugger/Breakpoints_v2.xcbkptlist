@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1D916D25-CF89-4653-A347-4903063EB4D6"
+            uuid = "3E1354A6-EB56-4F4E-ABA8-17ABA3480FA4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "plusMinusOne-Case-Study/Module/Product/ProductVC.swift"
+            filePath = "plusMinusOne-Case-Study/Module/Product/ProductEntity.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "showError(_:)"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "randomGenerate(closure:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

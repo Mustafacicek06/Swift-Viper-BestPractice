@@ -56,14 +56,14 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="295" height="19.333333333333332"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOZ-4j-ujw" userLabel="Name">
-                                                            <rect key="frame" x="0.0" y="0.0" width="152.66666666666666" height="19.333333333333332"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="161.33333333333334" height="19.333333333333332"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBa-jj-wU6" userLabel="Description">
-                                                            <rect key="frame" x="152.66666666666663" y="0.0" width="142.33333333333337" height="19.333333333333332"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                            <rect key="frame" x="161.33333333333337" y="0.0" width="133.66666666666663" height="19.333333333333332"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                             <color key="textColor" systemColor="systemGrayColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -144,7 +144,7 @@
                         <constraint firstItem="ziE-up-QEv" firstAttribute="top" secondItem="Bvz-iv-uat" secondAttribute="top" id="Esq-bx-idx"/>
                         <constraint firstItem="ziE-up-QEv" firstAttribute="centerY" secondItem="Bvz-iv-uat" secondAttribute="centerY" id="Esv-CD-OOh"/>
                         <constraint firstItem="ziE-up-QEv" firstAttribute="leading" secondItem="Bvz-iv-uat" secondAttribute="leading" id="Mlq-Vc-qxM"/>
-                        <constraint firstItem="ziE-up-QEv" firstAttribute="width" relation="lessThanOrEqual" secondItem="Bvz-iv-uat" secondAttribute="width" id="O5L-Y3-MVy"/>
+                        <constraint firstItem="ziE-up-QEv" firstAttribute="width" secondItem="Bvz-iv-uat" secondAttribute="width" id="O5L-Y3-MVy"/>
                         <constraint firstAttribute="trailing" secondItem="ziE-up-QEv" secondAttribute="trailing" id="QeR-FI-gGQ"/>
                         <constraint firstAttribute="bottom" secondItem="ziE-up-QEv" secondAttribute="bottom" id="c4q-4K-H01"/>
                     </constraints>

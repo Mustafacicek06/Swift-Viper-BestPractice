@@ -27,9 +27,7 @@ final class ProductVC: UIViewController, LoadingShowable {
     }()
     @IBOutlet weak var contentView: UIStackView!
     @IBOutlet weak var imageView: UIImageView!
-    
     @IBOutlet weak var timerView: TimerView!
-    
     @IBOutlet weak var commentView: CommentView!
     @IBOutlet weak var likeButton: FavoriteButton!
     @IBOutlet weak var nameLabel: UILabel!
@@ -52,10 +50,9 @@ final class ProductVC: UIViewController, LoadingShowable {
     func initData() {
         DispatchQueue.main.async { [weak self] in
             guard let product = self?.presenter?.getProduct(),
-                  let social = self?.presenter?.getSocial()
-                  else {
-                      
-                      self?.contentView.isHidden = true
+                  let social = self?.presenter?.getSocial() else {
+                self?.contentView.isHidden = true
+                self?.showError(MockServiceError.serviceUnavailable.localizedDescription)
                 return
             }
             self?.errorView.isHidden = true
@@ -66,12 +63,12 @@ final class ProductVC: UIViewController, LoadingShowable {
             self?.imageView.kf.setImage(with: URL(string: product.image))
             self?.timerView.initialTotalTime = 30
             self?.timerView.startCountdown()
+            self?.timerView.retryClosure = self?.randomData
             self?.likeButton.likeCount = social.likeCount
-            self?.commentView.avaragePoint = Double(4.5)
-            self?.commentView.commentCount = social.commentCounts.memberCommentsCount
+            self?.commentView.avaragePoint = social.commentCounts.averageRating
+            self?.commentView.commentCount = social.commentCounts.totalCommentCount
         }
     }
-
 }
 
 extension ProductVC: ProductViewProtocol {
@@ -85,10 +82,11 @@ extension ProductVC: ProductViewProtocol {
     
     func showError(_ error: String) {
         DispatchQueue.main.async { [weak self] in
-            self?.errorView.isHidden = false
-            self?.contentView.isHidden = true
-            self?.errorView.retryButtonTapped = self?.presenter?.viewDidLoad
-            self?.errorView.setMessage(error)
+            guard let self else { return }
+            self.errorView.isHidden = false
+            self.contentView.isHidden = true
+            self.errorView.retryButtonTapped = self.presenter?.viewDidLoad
+            self.errorView.setMessage(error)
         }
     }
     
@@ -126,5 +124,13 @@ private extension ProductVC {
     
     @objc func pullToRefresh() {
         presenter?.pullToRefresh()
+    }
+    
+    func randomData() {
+        self.presenter?.getSocial()?.randomGenerate(closure: { [weak self] like, commentCounts in
+            self?.likeButton.likeCount = like
+            self?.commentView.avaragePoint = commentCounts.averageRating
+            self?.commentView.commentCount = commentCounts.totalCommentCount
+        })
     }
 }

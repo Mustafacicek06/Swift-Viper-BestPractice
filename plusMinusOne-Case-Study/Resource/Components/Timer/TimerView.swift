@@ -5,9 +5,9 @@ final class TimerView: UIView {
     private let progress = KDCircularProgress()
     private let countdownLabel = UILabel()
     
-    var initialTotalTime: Int? {
+    var initialTotalTime: Int = 30 {
         didSet {
-            time = initialTotalTime ?? 0
+            time = initialTotalTime
         }
     }
     
@@ -18,6 +18,8 @@ final class TimerView: UIView {
     }
     
     private var countdownTimer: Timer?
+    
+    var retryClosure: (() -> Void)?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,7 +33,6 @@ final class TimerView: UIView {
     }
 
     private func setupUI() {
-        // İlerleme çubuğu ayarları
         progress.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height)
         progress.startAngle = -90
         progress.progressThickness = 0.2
@@ -56,14 +57,17 @@ final class TimerView: UIView {
     func startCountdown() {
         countdownTimer?.invalidate()
         countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCountdown), userInfo: nil, repeats: true)
+        
     }
 
     @objc func updateCountdown() {
         if let remainingTime = time, remainingTime > 0 {
-            progress.angle = ((360 * Double(remainingTime - 1)) / Double(initialTotalTime ?? 0))
+            progress.angle = ((360 * Double(remainingTime - 1)) / Double(initialTotalTime))
             time = remainingTime - 1
         } else {
-            countdownTimer?.invalidate()
+            startCountdown()
+            time = initialTotalTime
+            retryClosure?()
         }
     }
 }
