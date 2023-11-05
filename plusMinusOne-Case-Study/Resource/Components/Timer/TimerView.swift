@@ -5,7 +5,7 @@ final class TimerView: UIView {
     private let progress = KDCircularProgress()
     private let countdownLabel = UILabel()
     
-    var initialTotalTime: Int = 30 {
+    var initialTotalTime: Int = 60 {
         didSet {
             time = initialTotalTime
         }

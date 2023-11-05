@@ -61,7 +61,7 @@ final class ProductVC: UIViewController, LoadingShowable {
             self?.descriptionLabel.text = product.desc
             self?.valueLabel.text = "\(product.price.value) \(product.price.currency)"
             self?.imageView.kf.setImage(with: URL(string: product.image))
-            self?.timerView.initialTotalTime = 30
+            self?.timerView.initialTotalTime = 60
             self?.timerView.startCountdown()
             self?.timerView.retryClosure = self?.randomData
             self?.likeButton.likeCount = social.likeCount
@@ -98,14 +98,6 @@ extension ProductVC: ProductViewProtocol {
         DispatchQueue.main.async {
             self.scrollView.refreshControl?.endRefreshing()
         }
-    }
-    
-    func prepareTableView() {
-        
-    }
-    
-    func prepareNavigationBarUI() {
-        
     }
     
     func showAlert(title: String, message: String) {

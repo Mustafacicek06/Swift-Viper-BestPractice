@@ -48,7 +48,7 @@ final class ErrorView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(contentView)
-        contentView.anchor(leading: leadingAnchor, trailing: trailingAnchor, centerX: centerXAnchor, centerY: centerYAnchor ,padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+        contentView.anchor(leading: leadingAnchor, trailing: trailingAnchor, centerX: centerXAnchor, centerY: centerYAnchor)
         
         
         contentView.addArrangedSubview(errorImageView)

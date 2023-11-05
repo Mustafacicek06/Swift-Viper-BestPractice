@@ -10,7 +10,6 @@ import Foundation
 protocol ProductPresenterProtocol {
     func viewDidLoad()
     func pullToRefresh()
-    func viewWillDisplay()
     func getProduct() -> Product?
     func getSocial() -> Social?
 }
@@ -57,10 +56,6 @@ extension ProductPresenter: ProductPresenterProtocol {
     
     func pullToRefresh() {
         fetchData()
-    }
-    
-    func viewWillDisplay() {
-        
     }
 }
 
