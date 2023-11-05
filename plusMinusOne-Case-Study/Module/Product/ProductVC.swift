@@ -20,19 +20,19 @@ protocol ProductViewProtocol: AnyObject {
 final class ProductVC: UIViewController, LoadingShowable {
     var presenter: ProductPresenterProtocol?
     
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet private var scrollView: UIScrollView!
     private lazy var errorView: ErrorView = {
         let error = ErrorView()
         return error
     }()
-    @IBOutlet weak var contentView: UIStackView!
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var timerView: TimerView!
-    @IBOutlet weak var commentView: CommentView!
-    @IBOutlet weak var likeButton: FavoriteButton!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet private var contentView: UIStackView!
+    @IBOutlet private var imageView: UIImageView!
+    @IBOutlet private var timerView: TimerView!
+    @IBOutlet private var commentView: CommentView!
+    @IBOutlet private var likeButton: FavoriteButton!
+    @IBOutlet private var nameLabel: UILabel!
+    @IBOutlet private var descriptionLabel: UILabel!
+    @IBOutlet private var valueLabel: UILabel!
     
     
     override func viewDidLoad() {

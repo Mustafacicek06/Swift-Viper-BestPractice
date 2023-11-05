@@ -17,7 +17,6 @@ final class ProductRouter {
     static func createModule() -> ProductVC {
         let view = ProductVC()
         let interactor = ProductInteractor()
-        _ = ProductRouter()
         let presenter = ProductPresenter(view: view, interactor: interactor)
         
         view.presenter = presenter

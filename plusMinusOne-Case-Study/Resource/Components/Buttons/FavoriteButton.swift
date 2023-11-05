@@ -15,8 +15,6 @@ final class FavoriteButton: UIView {
     // MARK: Variables
     private var animator: UIViewPropertyAnimator?
     private var isLiked = false
-    private let emptyHeartImage = UIImage(systemName: "heart")
-    private let filledHeartImage = UIImage(systemName: "heart.fill")
 
     var likeCount: Int = 0 {
         didSet {
@@ -56,7 +54,7 @@ final class FavoriteButton: UIView {
    }
    
    private func updateLikeButtonImage() {
-       likeButton.setImage(isLiked ? filledHeartImage : emptyHeartImage, for: .normal)
+       likeButton.setImage(isLiked ? AppImages.filledHeart : AppImages.emptyHeart, for: .normal)
    }
    
    private func animateLike() {

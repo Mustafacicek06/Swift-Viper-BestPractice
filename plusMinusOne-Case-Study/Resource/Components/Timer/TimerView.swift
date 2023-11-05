@@ -35,9 +35,9 @@ final class TimerView: UIView {
     private func setupUI() {
         progress.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height)
         progress.startAngle = -90
-        progress.progressThickness = 0.2
+        progress.progressThickness = 0.45
         progress.trackThickness = 0.35
-        progress.trackColor = UIColor.gray
+        progress.trackColor = UIColor.systemGray5
         progress.clockwise = true
         progress.gradientRotateSpeed = 2
         progress.roundedCorners = true

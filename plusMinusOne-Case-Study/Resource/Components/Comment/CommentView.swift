@@ -26,8 +26,8 @@ final class CommentView: UIView {
         cosmosView.settings.filledColor = UIColor.orange
         cosmosView.settings.emptyBorderColor = UIColor.orange
         cosmosView.settings.filledBorderColor = UIColor.orange
-        cosmosView.settings.filledImage = UIImage(named: "GoldStarFilled")
-        cosmosView.settings.emptyImage = UIImage(named: "GoldStarEmpty")
+        cosmosView.settings.filledImage = AppImages.goldStarFilled
+        cosmosView.settings.emptyImage = AppImages.goldStarEmpty
         return cosmosView
     }()
     
