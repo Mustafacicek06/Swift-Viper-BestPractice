@@ -20,6 +20,7 @@ protocol ProductViewProtocol: AnyObject {
 final class ProductVC: UIViewController, LoadingShowable {
     var presenter: ProductPresenterProtocol?
     
+    @IBOutlet weak var scrollView: UIScrollView!
     private lazy var errorView: ErrorView = {
         let error = ErrorView()
         return error
@@ -29,6 +30,7 @@ final class ProductVC: UIViewController, LoadingShowable {
     
     @IBOutlet weak var timerView: TimerView!
     
+    @IBOutlet weak var commentView: CommentView!
     @IBOutlet weak var likeButton: FavoriteButton!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -38,29 +40,35 @@ final class ProductVC: UIViewController, LoadingShowable {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
+        addRefreshControl()
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         errorView.frame = view.bounds
         view.addSubview(errorView)
-        errorView.isHidden = true
     }
     
     func initData() {
-        DispatchQueue.main.async {
-            guard let product = self.presenter?.getProduct(),
-                  let social = self.presenter?.getSocial() else {
+        DispatchQueue.main.async { [weak self] in
+            guard let product = self?.presenter?.getProduct(),
+                  let social = self?.presenter?.getSocial()
+                  else {
+                      
+                      self?.contentView.isHidden = true
                 return
             }
-            self.contentView.isHidden = false
-            self.nameLabel.text = product.name
-            self.descriptionLabel.text = product.desc
-            self.valueLabel.text = "\(product.price.value) \(product.price.currency)"
-            self.imageView.kf.setImage(with: URL(string: product.image))
-            self.timerView.initialTotalTime = 30
-            self.timerView.startCountdown()
-            self.likeButton.likeCount = social.likeCount
+            self?.errorView.isHidden = true
+            self?.contentView.isHidden = false
+            self?.nameLabel.text = product.name
+            self?.descriptionLabel.text = product.desc
+            self?.valueLabel.text = "\(product.price.value) \(product.price.currency)"
+            self?.imageView.kf.setImage(with: URL(string: product.image))
+            self?.timerView.initialTotalTime = 30
+            self?.timerView.startCountdown()
+            self?.likeButton.likeCount = social.likeCount
+            self?.commentView.avaragePoint = Double(4.5)
+            self?.commentView.commentCount = social.commentCounts.memberCommentsCount
         }
     }
 
@@ -81,7 +89,6 @@ extension ProductVC: ProductViewProtocol {
             self?.contentView.isHidden = true
             self?.errorView.retryButtonTapped = self?.presenter?.viewDidLoad
             self?.errorView.setMessage(error)
-            
         }
     }
     
@@ -90,7 +97,9 @@ extension ProductVC: ProductViewProtocol {
     }
     
     func endRefreshing() {
-        
+        DispatchQueue.main.async {
+            self.scrollView.refreshControl?.endRefreshing()
+        }
     }
     
     func prepareTableView() {
@@ -104,6 +113,18 @@ extension ProductVC: ProductViewProtocol {
     func showAlert(title: String, message: String) {
         
     }
+}
+
+// MARK: Helper.
+
+private extension ProductVC {
+   func addRefreshControl() {
+       let refreshControl = UIRefreshControl()
+       refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
+       scrollView.refreshControl = refreshControl
+   }
     
-    
+    @objc func pullToRefresh() {
+        presenter?.pullToRefresh()
+    }
 }

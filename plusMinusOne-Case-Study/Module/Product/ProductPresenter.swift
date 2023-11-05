@@ -65,7 +65,7 @@ extension ProductPresenter: ProductPresenterProtocol {
     }
     
     func viewWillDisplay() {
-        //fetchData()
+        
     }
 }
 
@@ -78,6 +78,7 @@ extension ProductPresenter: ProductInteractorOuput {
             view.endRefreshing()
         case .failure(let error):
             social = nil
+            view.endRefreshing()
             view.showError(error.localizedDescription)
             break
         }
@@ -88,8 +89,6 @@ extension ProductPresenter: ProductInteractorOuput {
         switch completionHandler {
         case .success(let response):
             product = response
-            view.reloadData()
-            view.endRefreshing()
         case .failure(let error):
             product = nil
             view.showError(error.localizedDescription)

@@ -29,7 +29,7 @@ final class LoadingView {
 
     func startLoading() {
         DispatchQueue.main.async { [weak self] in
-            UIApplication.shared.windows.first?.addSubview(self?.blurView ?? UIView())
+            UIApplication.shared.connectedScenes.map({ $0 as? UIWindowScene }).compactMap({ $0 }).first?.windows.first?.addSubview(self?.blurView ?? UIView())
             self?.blurView.translatesAutoresizingMaskIntoConstraints = false
             self?.activityIndicator.startAnimating()
         }

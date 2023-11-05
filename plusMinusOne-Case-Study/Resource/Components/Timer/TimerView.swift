@@ -54,6 +54,7 @@ final class TimerView: UIView {
     }
 
     func startCountdown() {
+        countdownTimer?.invalidate()
         countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCountdown), userInfo: nil, repeats: true)
     }
 
