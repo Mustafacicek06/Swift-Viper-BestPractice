@@ -9,7 +9,6 @@ import XCTest
 @testable import plusMinusOne_Case_Study
 
 final class ProductPresenterTests: XCTestCase {
-
     private var presenter: ProductPresenter!
     private var view: MockProductVC!
     private var interactor: MockProductInteractor!
@@ -19,6 +18,12 @@ final class ProductPresenterTests: XCTestCase {
         view = MockProductVC()
         interactor = MockProductInteractor()
         presenter = ProductPresenter(view: view, interactor: interactor)
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+        
+        
     }
     
     func testViewDidLoad() {

@@ -15,7 +15,7 @@ protocol ProductPresenterProtocol {
 }
 
 final class ProductPresenter {
-    private let view: ProductViewProtocol
+    private weak var view: ProductViewProtocol?
     private let interactor: ProductInteractorProtocol
     
     private var product: Product?
@@ -29,14 +29,14 @@ final class ProductPresenter {
     }
     
     private func fetchData() {
-        view.showLoadingView()
+        view?.showLoadingView()
         interactor.fetchProduct(dispatchGroup: dispatchGroup)
         interactor.fetchSocial(dispatchGroup: dispatchGroup)
     }
     
     private func dispatchGroupEndProcess() {
         dispatchGroup.notify(queue: .main) { [weak self] in
-            self?.view.hideLoadingView()
+            self?.view?.hideLoadingView()
         }
     }
 }
@@ -64,18 +64,18 @@ extension ProductPresenter: ProductInteractorOuput {
         switch completionHandler {
         case .success(let response):
             social = response
-            view.reloadData()
-            view.endRefreshing()
+            view?.reloadData()
+            view?.endRefreshing()
         case .failure(let error):
             social = nil
-            view.endRefreshing()
-            view.showError(error.localizedDescription)
+            view?.endRefreshing()
+            view?.showError(error.localizedDescription)
             break
         }
     }
     
     func handleProductResult(_ completionHandler: Result<Product, Error>) {
-        view.hideLoadingView()
+        view?.hideLoadingView()
         switch completionHandler {
         case .success(let response):
             product = response

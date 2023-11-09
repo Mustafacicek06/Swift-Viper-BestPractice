@@ -9,6 +9,11 @@ import Foundation
 
 final class MockService {
     static let shared = MockService()
+    
+    private init() {
+        
+    }
+    
     func fetchProduct(completion: @escaping (Result<Product, Error>) -> Void) {
            DispatchQueue.global().asyncAfter(deadline: .now() + Double.random(in: 1.0...2.5)) {
                let randomValue = Int.random(in: 0...10)
@@ -44,7 +49,7 @@ final class MockService {
 
 // MARK: Json Decoder.
 private extension MockService {
-    func jsonFileDecoder<T: Codable>(_ jsonFileName: String, decoderModel: T.Type) -> T? {
+    func jsonFileDecoder<T: Decodable>(_ jsonFileName: String, decoderModel: T.Type) -> T? {
         guard let sourceURL = Bundle.main.url(forResource: jsonFileName, withExtension: "json") else {
             print("Json file decoder bundle error")
             return nil

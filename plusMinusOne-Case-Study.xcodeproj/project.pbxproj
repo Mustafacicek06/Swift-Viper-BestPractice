@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0045A1B68D4A2E0A979DA82A /* Pods_plusMinusOne_Case_Study.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C7EFAB8AD3D5EC0702AB3D7 /* Pods_plusMinusOne_Case_Study.framework */; };
+		598BBF362AFCBE050076D9BA /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598BBF352AFCBE050076D9BA /* Product.swift */; };
+		598BBF382AFCBE220076D9BA /* Social.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598BBF372AFCBE220076D9BA /* Social.swift */; };
 		59A7BD262AF059E20035D182 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A7BD252AF059E20035D182 /* AppDelegate.swift */; };
 		59A7BD282AF059E20035D182 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A7BD272AF059E20035D182 /* SceneDelegate.swift */; };
 		59A7BD2F2AF059E40035D182 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59A7BD2E2AF059E40035D182 /* Assets.xcassets */; };
@@ -66,6 +68,8 @@
 
 /* Begin PBXFileReference section */
 		430B0708EE156551151F2736 /* Pods-plusMinusOne-Case-Study.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-plusMinusOne-Case-Study.release.xcconfig"; path = "Target Support Files/Pods-plusMinusOne-Case-Study/Pods-plusMinusOne-Case-Study.release.xcconfig"; sourceTree = "<group>"; };
+		598BBF352AFCBE050076D9BA /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		598BBF372AFCBE220076D9BA /* Social.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Social.swift; sourceTree = "<group>"; };
 		59A7BD222AF059E20035D182 /* plusMinusOne-Case-Study.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "plusMinusOne-Case-Study.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A7BD252AF059E20035D182 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59A7BD272AF059E20035D182 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +157,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		598BBF342AFCBDFC0076D9BA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				598BBF352AFCBE050076D9BA /* Product.swift */,
+				598BBF372AFCBE220076D9BA /* Social.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		59A7BD192AF059E20035D182 = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +191,7 @@
 		59A7BD242AF059E20035D182 /* plusMinusOne-Case-Study */ = {
 			isa = PBXGroup;
 			children = (
+				598BBF342AFCBDFC0076D9BA /* Models */,
 				59D462102AF3CA3B00A3AA78 /* product.json */,
 				59D462152AF3D32300A3AA78 /* social.json */,
 				59D462122AF3CAE100A3AA78 /* Data */,
@@ -615,6 +629,7 @@
 			files = (
 				59A979C92AF517C800480BA6 /* CommentView.swift in Sources */,
 				59D462062AF3A4F300A3AA78 /* TimerView.swift in Sources */,
+				598BBF382AFCBE220076D9BA /* Social.swift in Sources */,
 				59A7BD722AF05D9D0035D182 /* ProductVC.swift in Sources */,
 				59A7BD632AF05AC00035D182 /* LoadingShowable.swift in Sources */,
 				59A7BD262AF059E20035D182 /* AppDelegate.swift in Sources */,
@@ -625,6 +640,7 @@
 				59A7BD5A2AF05A830035D182 /* ProductEntity.swift in Sources */,
 				59A7BD802AF068950035D182 /* UIView+Nib.swift in Sources */,
 				59A7BD6F2AF05C2C0035D182 /* Array+Unique.swift in Sources */,
+				598BBF362AFCBE050076D9BA /* Product.swift in Sources */,
 				59A7BD6B2AF05B3A0035D182 /* ErrorView.swift in Sources */,
 				59A7BD582AF05A730035D182 /* ProductInteractor.swift in Sources */,
 				59D4620D2AF3C08500A3AA78 /* FavoriteButton.swift in Sources */,
