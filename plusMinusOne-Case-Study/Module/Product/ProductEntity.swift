@@ -6,3 +6,5 @@
 //
 
 import Foundation
+
+// bu product viper'ına özel model'ler üzerinde belirli parsing gibi cast işlemleri için kullanabilirsin.
